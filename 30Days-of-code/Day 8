@@ -1,0 +1,38 @@
+Input Format
+
+The first line will have an integer N denoting the number of entries in the phone book. Each entry consists of two lines: a name and the corresponding phone number.
+
+After these, there will be some queries. Each query will contain name of a friend. Read the queries until end-of-file.
+
+//code
+
+//Complete this code or write your own from scratch
+import java.util.*;
+import java.io.*;
+
+class Solution{
+   public static void main(String []argh)
+   {
+      Scanner in = new Scanner(System.in);
+      String a=in.nextLine();
+      int N=Integer.parseInt(a);
+      Map<String,String> dict=new HashMap<String,String>();
+      for(int i=0;i<N;i++)
+      {
+         String name=in.nextLine();
+         String phone=in.nextLine();
+         dict.put(name,phone);
+      }
+   
+      while(in.hasNext())
+      {
+         String s=in.nextLine();
+         if(dict.containsKey(s)){
+             System.out.println(s+"="+dict.get(s));
+         }
+          else{
+              System.out.println("Not found");
+          }
+      }
+   }
+}
